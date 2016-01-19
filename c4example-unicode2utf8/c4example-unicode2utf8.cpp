@@ -25,12 +25,18 @@
 #include <time.h>
 #include "convertMethod.h"
 #include "../c4/c4encode.h"
-#ifdef _DEBUG
-#pragma comment(lib, "../Debug/c4.lib")
-#else
-#pragma comment(lib, "../Release/c4.lib")
+#ifdef _DEBUG_MD
+#pragma comment(lib, "../build/dll/debug/c4.lib")
 #endif
-
+#ifdef _DEBUG_MT
+#pragma comment(lib, "../build/static/debug/c4.lib")
+#endif
+#ifdef _RELEASE_MD
+#pragma comment(lib, "../build/dll/release/c4.lib")
+#endif
+#ifdef _RELEASE_MT
+#pragma comment(lib, "../build/static/release/c4.lib")
+#endif
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])

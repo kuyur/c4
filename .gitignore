@@ -232,3 +232,7 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 /testfiles/out
+Debug-MT
+Release-MD
+Release-MT
+Debug-MD
