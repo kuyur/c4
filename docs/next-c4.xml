@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<charmaps>
+    <charmap>
+        <name>Shift-JIS (Front-End)</name>
+        <description>Shift-JIS to Unicode.</description>
+        <version>Version info here</version>
+        <type>front-end</type>
+        <autodetect>true</autodetect>
+        <path>charmaps/fe-jis2u-little-endian.map</path>
+        <readingpolicy begin="0x00" end="0x7F" readnext="false" />
+        <readingpolicy begin="0x80" end="0xA0" readnext="true" />
+        <readingpolicy begin="0xA1" end="0xDF" readnext="false" />
+        <readingpolicy begin="0xE0" end="0xFF" readnext="true" />
+        <segment begin="0x0000" end="0x007F" reference="ascii" type="ascii" />
+        <segment begin="0x0080" end="0x00A0" reference="0xFFFD" type="undefine" />
+        <segment begin="0x00A1" end="0x00DF" reference="buffer" offset="0" type="JIS-X-0201" />
+        <segment begin="0x00E0" end="0x813F" reference="0xFFFD" type="undefine" />
+        <segment begin="0x8140" end="0xFFFF" reference="buffer" offset="63" type="JIS-X-0208" />
+    </charmap>
+    <charmap>
+        <name>Big5 (Front-End)</name>
+        <type>front-end</type>
+        <autodetect>true</autodetect>
+        <path>charmaps/fe-b2u-little-endian.map</path>
+        <readingpolicy begin="0x00" end="0x7F" readnext="false" />
+        <readingpolicy begin="0x80" end="0xFF" readnext="true" />
+        <segment begin="0x0000" end="0x007F" reference="ascii" type="ascii" />
+        <segment begin="0x0080" end="0x813F" reference="0xFFFD" type="undefine" />
+        <segment begin="0x8140" end="0xFFFF" reference="buffer" offset="0" type="big5-multiple-char" />
+    </charmap>
+    <charmap>
+        <name>Tra-CHN(Unicode) to Simp-CHN(Unicode)</name>
+        <version>Unicode 4.0 Unihan(Wikipedia version)</version>
+        <description>Traditional Chinese character to Simplified Chinese character basing on Unicode Plane 0(BMP). Not support character bigger than 0xFFFF.</description>
+        <path>charmaps/mm-tra2simp-little-endian.map</path>
+        <type>medium-mapping</type>
+        <segment begin="0x0000" end="0x42B6" reference="self" type="Unicode BMP" />
+        <segment begin="0x42B7" end="0x9F9C" reference="buffer" offset="0" type="Unicode BMP" />
+        <segment begin="0x9F9D" end="0xFFFF" reference="self" type="Unicode BMP" />
+    </charmap>
+    <charmap>
+        <name>Shift-JIS (Back-End)</name>
+        <description>Unicode to Shift-JIS.</description>
+        <version>Version info here</version>
+        <type>back-end</type>
+        <path>charmaps/be-u2jis.map</path>
+        <segment begin="0x0000" end="0x007F" reference="ascii" type="ascii" />
+        <segment begin="0x...." end="0x...." reference="buffer" type="JIS-X-0201/0208"/>
+        <segment begin="0x...." end="0x...." reference="0x0020" type="undefine"/>
+    </charmap>
+    <charmap>
+        <name>Big5 (Back-End)</name>
+        <description>Unicode to Big5(UAO2.50).</description>
+        <type>back-end</type>
+        <path>charmaps/be-u2big5.map</path>
+        <segment begin="0x0000" end="0x007F" reference="ascii" type="ascii" />
+        <segment begin="0x...." end="0x...." reference="buffer" type="big5-multiple-char"/>
+        <segment begin="0x...." end="0x...." reference="0x0020" type="undefine"/>
+    </charmap>
+<charmaps>
+<channels>
+    <channel>
+        <name>Big5 to UTF-16(LE)</name>
+        <front-end>Big5 (Front-End)</front-end>
+        <medium-mappings></medium-mappings>
+        <back-end>UTF-16(LE)</back-end>
+    </channel>
+    <channel>
+        <name>Big5 to GBK via traditional-to-Simplified</name>
+        <front-end>Big5 (Front-End)</front-end>
+        <medium-mappings>
+            <medium-mapping>Tra-CHN(Unicode) to Simp-CHN(Unicode)</medium-mapping>
+        </medium-mappings>
+        <back-end>GBK (Back-End)</back-end>
+    </channel>
+    <channel>
+        <name>UTF-16(LE) to UTF-8</name>
+        <front-end>UTF-16(LE)</front-end>
+        <medium-mappings></medium-mappings>
+        <back-end>UTF-8</back-end>
+    </channel>
+</channels>

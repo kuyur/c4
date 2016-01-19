@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4", "c4\c4.vcxproj", "{5A06F393-71DE-46FE-93B4-03FD4A60FECA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4example-unicode2utf8", "c4example-unicode2utf8\c4example-unicode2utf8.vcxproj", "{C603DDF7-E883-4D8A-B2FE-FB575F95E6B9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A06F393-71DE-46FE-93B4-03FD4A60FECA} = {5A06F393-71DE-46FE-93B4-03FD4A60FECA}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4example-check_convert", "c4example-check_convert\c4example-check_convert.vcxproj", "{BE75505D-94A8-4BF9-AD95-C88D2A952FBC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A06F393-71DE-46FE-93B4-03FD4A60FECA} = {5A06F393-71DE-46FE-93B4-03FD4A60FECA}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4example-utf8tounicode", "c4example-utf8tounicode\c4example-utf8tounicode.vcxproj", "{FEECD77B-E1CD-48F3-B4DC-A2A6CDF311F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A06F393-71DE-46FE-93B4-03FD4A60FECA} = {5A06F393-71DE-46FE-93B4-03FD4A60FECA}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4charmapmaker-b2u", "c4charmapmaker-b2u\c4charmapmaker-b2u.vcxproj", "{B064ED26-A704-4B2A-89BF-E96667D2A8FB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4charmapmaker-gb2u", "c4charmapmaker-gb2u\c4charmapmaker-gb2u.vcxproj", "{3A159553-617E-48EB-99C4-4597E1AAF7A6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4charmapmaker-jis2u", "c4charmapmaker-jis2u\c4charmapmaker-jis2u.vcxproj", "{2583AD38-D617-4AEF-AA9C-362C2781AC79}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4charmapmaker-simp2tra", "c4charmapmaker-simp2tra\c4charmapmaker-simp2tra.vcxproj", "{FA21FFA5-474F-4AA7-9A90-2BF3B7BEBFCE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4example-simp2tra", "c4example-simp2tra\c4example-simp2tra.vcxproj", "{4813D072-6364-4C46-BA52-721347D32B82}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A06F393-71DE-46FE-93B4-03FD4A60FECA} = {5A06F393-71DE-46FE-93B4-03FD4A60FECA}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4charmapmaker-tra2simp", "c4charmapmaker-tra2simp\c4charmapmaker-tra2simp.vcxproj", "{9402CE22-AB8B-4F08-8746-B7FA84E0C5AA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4charmapmaker-kr2u", "c4charmapmaker-kr2u\c4charmapmaker-kr2u.vcxproj", "{490B275F-0745-4C57-B6FA-B9AC19B42810}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4example-test", "c4example-test\c4example-test.vcxproj", "{54168728-5F3A-4EB4-AAAE-BAFA6E0EFCE8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A06F393-71DE-46FE-93B4-03FD4A60FECA} = {5A06F393-71DE-46FE-93B4-03FD4A60FECA}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4charmapmaker-cyrillic2u", "c4charmapmaker-cyrillic2u\c4charmapmaker-cyrillic2u.vcxproj", "{C4947011-2DF6-4C75-86D9-1881738A714D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c4charmapmaker-latin2u", "c4charmapmaker-latin2u\c4charmapmaker-latin2u.vcxproj", "{5A25B019-88B1-4DAD-99C0-048E158E1FBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A06F393-71DE-46FE-93B4-03FD4A60FECA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5A06F393-71DE-46FE-93B4-03FD4A60FECA}.Debug|Win32.Build.0 = Debug|Win32
+		{5A06F393-71DE-46FE-93B4-03FD4A60FECA}.Release|Win32.ActiveCfg = Release|Win32
+		{5A06F393-71DE-46FE-93B4-03FD4A60FECA}.Release|Win32.Build.0 = Release|Win32
+		{C603DDF7-E883-4D8A-B2FE-FB575F95E6B9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C603DDF7-E883-4D8A-B2FE-FB575F95E6B9}.Debug|Win32.Build.0 = Debug|Win32
+		{C603DDF7-E883-4D8A-B2FE-FB575F95E6B9}.Release|Win32.ActiveCfg = Release|Win32
+		{C603DDF7-E883-4D8A-B2FE-FB575F95E6B9}.Release|Win32.Build.0 = Release|Win32
+		{BE75505D-94A8-4BF9-AD95-C88D2A952FBC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BE75505D-94A8-4BF9-AD95-C88D2A952FBC}.Debug|Win32.Build.0 = Debug|Win32
+		{BE75505D-94A8-4BF9-AD95-C88D2A952FBC}.Release|Win32.ActiveCfg = Release|Win32
+		{BE75505D-94A8-4BF9-AD95-C88D2A952FBC}.Release|Win32.Build.0 = Release|Win32
+		{FEECD77B-E1CD-48F3-B4DC-A2A6CDF311F3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FEECD77B-E1CD-48F3-B4DC-A2A6CDF311F3}.Debug|Win32.Build.0 = Debug|Win32
+		{FEECD77B-E1CD-48F3-B4DC-A2A6CDF311F3}.Release|Win32.ActiveCfg = Release|Win32
+		{FEECD77B-E1CD-48F3-B4DC-A2A6CDF311F3}.Release|Win32.Build.0 = Release|Win32
+		{B064ED26-A704-4B2A-89BF-E96667D2A8FB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B064ED26-A704-4B2A-89BF-E96667D2A8FB}.Debug|Win32.Build.0 = Debug|Win32
+		{B064ED26-A704-4B2A-89BF-E96667D2A8FB}.Release|Win32.ActiveCfg = Release|Win32
+		{B064ED26-A704-4B2A-89BF-E96667D2A8FB}.Release|Win32.Build.0 = Release|Win32
+		{3A159553-617E-48EB-99C4-4597E1AAF7A6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3A159553-617E-48EB-99C4-4597E1AAF7A6}.Debug|Win32.Build.0 = Debug|Win32
+		{3A159553-617E-48EB-99C4-4597E1AAF7A6}.Release|Win32.ActiveCfg = Release|Win32
+		{3A159553-617E-48EB-99C4-4597E1AAF7A6}.Release|Win32.Build.0 = Release|Win32
+		{2583AD38-D617-4AEF-AA9C-362C2781AC79}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2583AD38-D617-4AEF-AA9C-362C2781AC79}.Debug|Win32.Build.0 = Debug|Win32
+		{2583AD38-D617-4AEF-AA9C-362C2781AC79}.Release|Win32.ActiveCfg = Release|Win32
+		{2583AD38-D617-4AEF-AA9C-362C2781AC79}.Release|Win32.Build.0 = Release|Win32
+		{FA21FFA5-474F-4AA7-9A90-2BF3B7BEBFCE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FA21FFA5-474F-4AA7-9A90-2BF3B7BEBFCE}.Debug|Win32.Build.0 = Debug|Win32
+		{FA21FFA5-474F-4AA7-9A90-2BF3B7BEBFCE}.Release|Win32.ActiveCfg = Release|Win32
+		{FA21FFA5-474F-4AA7-9A90-2BF3B7BEBFCE}.Release|Win32.Build.0 = Release|Win32
+		{4813D072-6364-4C46-BA52-721347D32B82}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4813D072-6364-4C46-BA52-721347D32B82}.Debug|Win32.Build.0 = Debug|Win32
+		{4813D072-6364-4C46-BA52-721347D32B82}.Release|Win32.ActiveCfg = Release|Win32
+		{4813D072-6364-4C46-BA52-721347D32B82}.Release|Win32.Build.0 = Release|Win32
+		{9402CE22-AB8B-4F08-8746-B7FA84E0C5AA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9402CE22-AB8B-4F08-8746-B7FA84E0C5AA}.Debug|Win32.Build.0 = Debug|Win32
+		{9402CE22-AB8B-4F08-8746-B7FA84E0C5AA}.Release|Win32.ActiveCfg = Release|Win32
+		{9402CE22-AB8B-4F08-8746-B7FA84E0C5AA}.Release|Win32.Build.0 = Release|Win32
+		{490B275F-0745-4C57-B6FA-B9AC19B42810}.Debug|Win32.ActiveCfg = Debug|Win32
+		{490B275F-0745-4C57-B6FA-B9AC19B42810}.Debug|Win32.Build.0 = Debug|Win32
+		{490B275F-0745-4C57-B6FA-B9AC19B42810}.Release|Win32.ActiveCfg = Release|Win32
+		{490B275F-0745-4C57-B6FA-B9AC19B42810}.Release|Win32.Build.0 = Release|Win32
+		{54168728-5F3A-4EB4-AAAE-BAFA6E0EFCE8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{54168728-5F3A-4EB4-AAAE-BAFA6E0EFCE8}.Debug|Win32.Build.0 = Debug|Win32
+		{54168728-5F3A-4EB4-AAAE-BAFA6E0EFCE8}.Release|Win32.ActiveCfg = Release|Win32
+		{54168728-5F3A-4EB4-AAAE-BAFA6E0EFCE8}.Release|Win32.Build.0 = Release|Win32
+		{C4947011-2DF6-4C75-86D9-1881738A714D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C4947011-2DF6-4C75-86D9-1881738A714D}.Debug|Win32.Build.0 = Debug|Win32
+		{C4947011-2DF6-4C75-86D9-1881738A714D}.Release|Win32.ActiveCfg = Release|Win32
+		{C4947011-2DF6-4C75-86D9-1881738A714D}.Release|Win32.Build.0 = Release|Win32
+		{5A25B019-88B1-4DAD-99C0-048E158E1FBC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5A25B019-88B1-4DAD-99C0-048E158E1FBC}.Debug|Win32.Build.0 = Debug|Win32
+		{5A25B019-88B1-4DAD-99C0-048E158E1FBC}.Release|Win32.ActiveCfg = Release|Win32
+		{5A25B019-88B1-4DAD-99C0-048E158E1FBC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
