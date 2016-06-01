@@ -90,7 +90,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	outfile.close();
 	delete []stringBuffer;
 
-	CC4EncodeUTF8 *utf8Encode = CC4EncodeUTF8::getInstance();
+	const CC4EncodeUTF8 *utf8Encode = CC4EncodeUTF8::getInstance();
 	if (utf8Encode != NULL)
 	{
 		cout<<"address:"<<(int)utf8Encode<<endl;

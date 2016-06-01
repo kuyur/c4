@@ -182,7 +182,7 @@ public:
 class CC4EncodeUTF16 : CC4Encode
 {
 public:
-    static CC4EncodeUTF16* getInstance();
+    static const CC4EncodeUTF16* getInstance();
 private:
     static CC4EncodeUTF16 *s_instance;  // Unicode instance. Singleton pattern
     CC4EncodeUTF16(const std::wstring& name, const std::wstring& version, const std::wstring& description, bool is_auto_check);
@@ -236,9 +236,9 @@ public:
 class CC4EncodeUTF8 : CC4Encode
 {
 public:
-    static CC4EncodeUTF8*   getInstance();
+    static const CC4EncodeUTF8* getInstance();
 private:
-    static CC4EncodeUTF8   *s_instance;    // Utf-8 instance. Singleton pattern
+    static CC4EncodeUTF8 *s_instance;    // Utf-8 instance. Singleton pattern
     CC4EncodeUTF8(const std::wstring& name, const std::wstring& version, const std::wstring& description, bool is_auto_check);
     ~CC4EncodeUTF8() {/*s_instance = NULL;*/};
     class CGarbo

@@ -154,7 +154,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	rawStringBuffer = NULL;
 	stringBuffer = NULL;
 
-	CC4EncodeUTF16 *unicodeEncode = CC4EncodeUTF16::getInstance();
+	const CC4EncodeUTF16 *unicodeEncode = CC4EncodeUTF16::getInstance();
 	if (unicodeEncode != NULL)
 	{
 		cout<<"get Unicode Encode instance success!"<<endl;

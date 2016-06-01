@@ -22,8 +22,8 @@ CC4Context::CC4Context(const std::wstring &charmap_name, const std::wstring &bas
 	:m_bInitialized(false), m_charmapConfPath(base_path), m_basePath(base_path), m_errorMessage(L"no error.")
 {
 	m_charmapConfPath.append(charmap_name);
-	m_encodes.push_back((CC4Encode*)CC4EncodeUTF16::getInstance());
-	m_encodes.push_back((CC4Encode*)CC4EncodeUTF8::getInstance());
+	m_constEncodes.push_back((const CC4Encode*)CC4EncodeUTF16::getInstance());
+	m_constEncodes.push_back((const CC4Encode*)CC4EncodeUTF8::getInstance());
 }
 
 CC4Context::~CC4Context()
@@ -418,11 +418,9 @@ void CC4Context::finalize()
 		// delete encode
 		std::vector<CC4Encode*>::iterator encode_iter;
 		encode_iter = m_encodes.begin();
-		encode_iter++;
-		encode_iter++;
 		for (; encode_iter != m_encodes.end(); ++encode_iter)
 			delete *encode_iter;
-		m_encodes.erase(m_encodes.begin()+2, m_encodes.end());
+		m_encodes.erase(m_encodes.begin(), m_encodes.end());
 
 		// delete policies
 		std::vector<CC4Policies*>::iterator policies_iter;
@@ -449,9 +447,15 @@ void CC4Context::finalize()
 
 const CC4Encode* CC4Context::getEncode(const std::wstring& encode_name) const
 {
-	for (unsigned int i=0; i< m_encodes.size(); ++i)
+	for (unsigned int i = 0; i < m_constEncodes.size(); ++i)
 	{
-		const CC4Encode *encode = m_encodes[i];
+		const CC4Encode *encode = m_constEncodes[i];
+		if (encode->getName().compare(encode_name) == 0)
+			return encode;
+	}
+	for (unsigned int i = 0; i < m_encodes.size(); ++i)
+	{
+		CC4Encode *encode = m_encodes[i];
 		if (encode->getName().compare(encode_name) == 0)
 			return encode;
 	}
@@ -460,14 +464,22 @@ const CC4Encode* CC4Context::getEncode(const std::wstring& encode_name) const
 
 unsigned int CC4Context::getEncodeAmount() const
 {
-	return m_encodes.size();
+	return m_encodes.size() + m_constEncodes.size();
 }
 
 const CC4Encode* CC4Context::getMostPossibleEncode(const std::string& text) const
 {
-	for (unsigned int i=0; i< m_encodes.size(); ++i)
+	for (unsigned int i = 0; i < m_constEncodes.size(); ++i)
 	{
-		const CC4Encode *encode = m_encodes[i];
+		const CC4Encode *encode = m_constEncodes[i];
+		if (!encode->isAutoCheck())
+			continue;
+		if (encode->match(text.c_str(), text.size()))
+			return encode;
+	}
+	for (unsigned int i = 0; i< m_encodes.size(); ++i)
+	{
+		CC4Encode *encode = m_encodes[i];
 		if (!encode->isAutoCheck())
 			continue;
 		if (encode->match(text.c_str(), text.size()))
@@ -480,9 +492,17 @@ const CC4Encode* CC4Context::getMostPossibleEncode(const char* text) const
 {
 	if (NULL == text)
 		return NULL;
-	for (unsigned int i=0; i< m_encodes.size(); ++i)
+	for (unsigned int i = 0; i < m_constEncodes.size(); ++i)
 	{
-		const CC4Encode *encode = m_encodes[i];
+		const CC4Encode *encode = m_constEncodes[i];
+		if (!encode->isAutoCheck())
+			continue;
+		if (encode->match(text, strlen(text)))
+			return encode;
+	}
+	for (unsigned int i = 0; i< m_encodes.size(); ++i)
+	{
+		CC4Encode *encode = m_encodes[i];
 		if (!encode->isAutoCheck())
 			continue;
 		if (encode->match(text, strlen(text)))
@@ -494,6 +514,11 @@ const CC4Encode* CC4Context::getMostPossibleEncode(const char* text) const
 std::list<const CC4Encode*> CC4Context::getEncodesList() const
 {
 	std::list<const CC4Encode*> encodes_list;
+	for (unsigned int i = 0; i < m_constEncodes.size(); ++i)
+	{
+		const CC4Encode *encode = m_constEncodes[i];
+		encodes_list.push_back(encode);
+	}
 	for (unsigned int i=0; i< m_encodes.size(); ++i)
 	{
 		const CC4Encode *encode = m_encodes[i];
@@ -505,6 +530,11 @@ std::list<const CC4Encode*> CC4Context::getEncodesList() const
 std::list<std::wstring> CC4Context::getEncodesNameList() const
 {
 	std::list<std::wstring> name_list;
+	for (unsigned int i = 0; i < m_constEncodes.size(); ++i)
+	{
+		const CC4Encode *encode = m_constEncodes[i];
+		name_list.push_back(encode->getName());
+	}
 	for (unsigned int i=0; i< m_encodes.size(); ++i)
 	{
 		const CC4Encode *encode = m_encodes[i];

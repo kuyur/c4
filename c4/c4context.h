@@ -40,14 +40,15 @@ public:
     std::list<std::wstring> getEncodesNameList() const;
 
 private:
-    bool                        m_bInitialized;
-    std::wstring                m_errorMessage;
-    std::wstring                m_basePath;
-    std::wstring                m_charmapConfPath;
-    std::vector<unsigned char*> m_mapBuffers;
-    std::vector<CC4Encode*>     m_encodes;
-    std::vector<CC4Segments*>   m_segments;
-    std::vector<CC4Policies*>   m_policies;
+    bool                          m_bInitialized;
+    std::wstring                  m_errorMessage;
+    std::wstring                  m_basePath;
+    std::wstring                  m_charmapConfPath;
+    std::vector<unsigned char*>   m_mapBuffers;
+    std::vector<CC4Encode*>       m_encodes;
+    std::vector<const CC4Encode*> m_constEncodes;
+    std::vector<CC4Segments*>     m_segments;
+    std::vector<CC4Policies*>     m_policies;
     bool loadCharmapConfig(const TiXmlDocument *xmlfile);
     bool loadCharmap(const TiXmlElement *charmap_node);
 };

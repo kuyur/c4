@@ -87,14 +87,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	delete newContext;
 
 	// CC4EncodeUTF16 and CC4EncodeUTF8 static instances will be deleted automatically.
-	CC4EncodeUTF16* instance_utf16 = CC4EncodeUTF16::getInstance();
-	CC4EncodeUTF8*  instance_utf8  = CC4EncodeUTF8::getInstance();
+	const CC4EncodeUTF16* instance_utf16 = CC4EncodeUTF16::getInstance();
+	const CC4EncodeUTF8*  instance_utf8  = CC4EncodeUTF8::getInstance();
 	// delete instance_utf16; /* forbidden */
 	// delete instance_utf8;  /* forbidden */
-	/* you can delete instance in this way, but automatic garbo will fail */
-	// delete (CC4Encode*)instance_utf16;
-	/* you can delete instance in this way, but automatic garbo will fail */
-	// delete (CC4Encode*)instance_utf8;
 
 	return 0;
 }

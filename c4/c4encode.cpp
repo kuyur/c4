@@ -481,7 +481,7 @@ encode_features CC4EncodeUTF16::_getEncodeFeatures()
 	return typeUTF16;
 }
 
-CC4EncodeUTF16* CC4EncodeUTF16::getInstance()
+const CC4EncodeUTF16* CC4EncodeUTF16::getInstance()
 {
 	if (NULL == s_instance)
 		s_instance = new CC4EncodeUTF16(CC4EncodeUTF16::_getName(), CC4EncodeUTF16::_getVersion(), CC4EncodeUTF16::_getDescription(), false);
@@ -741,7 +741,7 @@ encode_features CC4EncodeUTF8::_getEncodeFeatures()
 	return typeUTF8;
 }
 
-CC4EncodeUTF8* CC4EncodeUTF8::getInstance()
+const CC4EncodeUTF8* CC4EncodeUTF8::getInstance()
 {
 	if (NULL == s_instance)
 		s_instance = new CC4EncodeUTF8(CC4EncodeUTF8::_getName(), CC4EncodeUTF8::_getVersion(), CC4EncodeUTF8::_getDescription(), true);
