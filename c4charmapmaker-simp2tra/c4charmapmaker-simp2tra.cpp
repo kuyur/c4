@@ -5,8 +5,8 @@
 /*                                                                      */
 /* Version: 1.0                                                         */
 /* Author:  kuyur (kuyur@kuyur.info)                                    */
-/* Published under Apache License 2.0                                   */
-/* http://www.apache.org/licenses/LICENSE-2.0                           */
+/* Published under LGPL-3.0                                             */
+/* https://www.gnu.org/licenses/lgpl-3.0.en.html                        */
 /*                                                                      */
 /* Copyright 2016 Project c4                                            */
 /* https://github.com/kuyur/c4                                          */
