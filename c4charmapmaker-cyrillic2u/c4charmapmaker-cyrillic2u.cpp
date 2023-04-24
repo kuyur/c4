@@ -3,7 +3,7 @@
 /* Make Cyrillic(CP1251) to Unicode Charmap for c4-lib                  */
 /*                                                                      */
 /* Version: 1.0                                                         */
-/* Author:  kuyur (kuyur@kuyur.info)                                    */
+/* Author:  kuyur (kuyur@kuyur.net)                                    */
 /* Published under LGPL-3.0                                             */
 /* https://www.gnu.org/licenses/lgpl-3.0.en.html                        */
 /*                                                                      */
